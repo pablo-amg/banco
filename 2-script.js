@@ -13,6 +13,7 @@ const contenConsulta = document.getElementById("contenConsulta")
 let usuario
 let contraseña
 let saldo = 5999993
+let acciones = []
 
 
 /* objetos de consulta */
@@ -24,10 +25,14 @@ class TiposDeConsulta {
     }
 }
 
-let consul = new TiposDeConsulta ("Consulta", "inputConsulta")
+let consul = new TiposDeConsulta ("una Consulta", "inputConsulta")
 
+let retiro = new TiposDeConsulta ("un retiro", "inputRetiro")
 
+let ingreso = new TiposDeConsulta ("un ingreso", "inputIngreso")
 
+/* con esto subimos estos objetos */
+acciones.push(consul,retiro,ingreso)
 
 
 
@@ -60,22 +65,36 @@ function menu(){
 sectionMenu.style.display = "flex"
 sectionBienvenida.style.display = "none"
 
+let intro = `<h1>hola ${usuario} </h1>
+            <h2>que desea hacer?</h2>
+    `
+contenMenu.innerHTML += intro
+
+acciones.forEach((accion) => {
 let opciones = 
     `
-    <h1>hola ${usuario} </h1>
-    <h2>que desea hacer?</h2>
-
-    <input type="radio" id=${consul.id} name="opcion" hidden >
-    <label  for=${consul.id}>Aqui hacer una ${consul.tipo} </label>
-    
+    <input type="radio" id=${accion.id} name="opcion" hidden >
+    <label  for=${accion.id}>Pulse Aqui para hacer ${accion.tipo} </label>
+    <br></br>
     `
 /* el for vincula al label con el input type el cual es mas facil de manejar
 para el addEvent */
 
-contenMenu.innerHTML = opciones
-let opcionConsulta = document.getElementById("inputConsulta")
-opcionConsulta.addEventListener("click",consulta)
+contenMenu.innerHTML += opciones
 
+
+
+
+});
+
+let opcionConsulta = document.getElementById("inputConsulta")
+let opcionRetiro = document.getElementById("inputRetiro")
+let opcionIngreso = document.getElementById("inputIngreso")
+
+opcionConsulta.addEventListener("click",consulta)
+/* opcionConsulta.addEventListener("click",consulta)
+opcionConsulta.addEventListener("click",consulta) */
+/* faltan estos */
 
 }
 
@@ -88,6 +107,7 @@ function consulta (){
     contenConsulta.innerHTML = txt
 
 }
+
 
 
 
