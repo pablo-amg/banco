@@ -8,29 +8,29 @@
 </head>
 <body>
 
+<!-- esta parte al ser la inicial va directamente en HTML -->
 <section id="bienvenida">
     <h1>bienvenido al banco</h1>
     <h3>porfavor ingrese su usuario y contraseña</h3>
 
 <form id="FormUsuario">
-    <input type="text" id="usuario" placeholder="Ingrese su usuario">
-    <button type="submit">Enviar</button>
-</form>
-
-<form id="FormContraseña">
-    <input type="text" id="contraseña" placeholder="Ingrese su contraseña">
+    <input type="text" id="usuario" placeholder="Ingrese su usuario" required>
+    <input type="text" id="contraseña" placeholder="Ingrese su contraseña"required >
     <button type="submit">Enviar</button>
 </form>
 </section>
 
 
+<!-- empiezan secciones js -->
 <section id="menu">
-    <div id="contenMenu"></div>
+    <div id="contenMenu">
+        
+    </div>
 </section>
 
 
 <section id="consulta">
-    <h1>su saldo es de $$$</h1>
+    <div id="contenConsulta"></div>
 </section>
 
 
