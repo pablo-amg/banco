@@ -15,6 +15,20 @@ let contraseña
 let saldo = 5999993
 
 
+/* objetos de consulta */
+
+class TiposDeConsulta {
+    constructor (tipo,id){
+        this.tipo = tipo
+        this.id = id
+    }
+}
+
+let consul = new TiposDeConsulta ("Consulta", "inputConsulta")
+
+
+
+
 
 
 function inicio() {
@@ -51,8 +65,8 @@ let opciones =
     <h1>hola ${usuario} </h1>
     <h2>que desea hacer?</h2>
 
-    <input type="radio" id="inputConsulta" name="opcion" hidden >
-    <label  for="inputConsulta">Aqui para la consultar</label>
+    <input type="radio" id=${consul.id} name="opcion" hidden >
+    <label  for=${consul.id}>Aqui hacer una ${consul.tipo} </label>
     
     `
 /* el for vincula al label con el input type el cual es mas facil de manejar
