@@ -12,7 +12,7 @@ const contenConsulta = document.getElementById("contenConsulta")
 /* hace en un futuro una version que use return envez de variables globales */
 let usuario
 let contraseña
-let saldo = 5999993
+let saldo = 1000
 let acciones = []
 
 
@@ -83,8 +83,6 @@ para el addEvent */
 contenMenu.innerHTML += opciones
 
 
-
-
 });
 
 let opcionConsulta = document.getElementById("inputConsulta")
@@ -92,13 +90,23 @@ let opcionRetiro = document.getElementById("inputRetiro")
 let opcionIngreso = document.getElementById("inputIngreso")
 
 opcionConsulta.addEventListener("click",consulta)
-/* opcionConsulta.addEventListener("click",consulta)
-opcionConsulta.addEventListener("click",consulta) */
-/* faltan estos */
+opcionRetiro.addEventListener("click",extraer)
+opcionIngreso.addEventListener("click",depositar)   
 
 }
 
 function consulta (){
+    sectionMenu.style.display = "none"
+    sectionConsulta.style.display ="flex"
+
+    let txt = `<h1>hola su saldo actual: $${saldo} </h1>
+    `
+
+    contenConsulta.innerHTML = txt
+
+}
+
+function extraer (){
     sectionMenu.style.display = "none"
     sectionConsulta.style.display ="flex"
 
@@ -108,8 +116,15 @@ function consulta (){
 
 }
 
+function depositar (){
+    sectionMenu.style.display = "none"
+    sectionConsulta.style.display ="flex"
 
+    let txt = `<h1>hola su saldo es de $${saldo} </h1>`
 
+    contenConsulta.innerHTML = txt
+
+}
 
 
 inicio()
