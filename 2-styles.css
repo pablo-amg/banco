@@ -1,19 +1,8 @@
-/* # ID -- . CLASS */
+.hola{
+    color: red;
+}
 
 body{
-    background: black;
-    color: white;
-}
-
-#bienvenida{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#menu{
-    /* me gustaria poder modificarlo para que salga tipo 4 cajas 2 de un lado y 2 del otro */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+color: white;
+background: black;
 }

@@ -2,39 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="./2-styles.css">
-    <title>Banco</title>
 </head>
+
+
+
+<!--! react -->
+<script type="module">
+  import React from "https://esm.sh/react?dev"
+  import ReactDOM from "https://esm.sh/react-dom/client?dev"
+
+  window.React = React
+  window.ReactDOM = ReactDOM
+</script>
+
+<!--! Babel -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+<script type="text/babel" data-presets="react">
+// componente de react
+
+
+function Saludo({persona}){
+    return (
+    <div> 
+        <h2 > hola {persona} como estas?  </h2>
+    </div>
+    )
+}
+
+function Comoes ({color}){
+    return (
+        <div>
+            <h1>usted es {color}</h1>
+        </div>
+    )}
+
+function Loco ({chic,n}){
+    return (
+        <div class={chic}>
+            <h1>LOCO {n}</h1>
+        </div>
+    )}
+
+
+function App() {
+    return(
+    <div>
+        <Saludo persona = "Anto" />
+        <Saludo persona = "gustavo" />
+        <Comoes color = "blanco" />
+        <Loco chic ="hola" n = "pablo" />
+
+    </div>
+);
+
+
+
+
+}
+
+
+const rootEl = document.querySelector("#root")
+const root = ReactDOM.createRoot(rootEl)
+root.render(< App/>)
+
+
+
+
+</script>
+
+
+<!-- ? por que no funciona esta parte del react -->
+<script type="text/babel">
+
+function Analisis({nombre}) {
+return(
+    <div>
+    <h2>hola {nombre}</h2>    
+    </div>
+)}
+
+function Exp() {
+return (
+    <div>
+        <Analisis nombre ="pablo"/>
+    </div>
+)}
+
+
+/* pude cambiar las variables y que funcione */
+const tqmEl = document.querySelector("#tqm")
+const tq = ReactDOM.createRoot(tqmEl)
+tq.render(< Exp/>)
+
+
+
+
+
+</script>
+
+
+
 <body>
 
-<!-- esta parte al ser la inicial va directamente en HTML -->
+
+<!-- ! seccion react copiada  -->
 <section id="bienvenida">
-    <h1>bienvenido al banco</h1>
-    <h3>porfavor ingrese su usuario y contraseña</h3>
-
-<form id="FormUsuario">
-    <input type="text" id="usuario" placeholder="Ingrese su usuario" required>
-    <input type="text" id="contraseña" placeholder="Ingrese su contraseña"required >
-    <button type="submit">Enviar</button>
-</form>
+<div id="root"></div>
 </section>
+<!-- ! seccion react Propia  -->
+<section id="nose">
+<div id="tqm"></div>
 
-
-<!-- empiezan secciones js -->
-<section id="menu">
-    <div id="contenMenu">
-        
-    </div>
-</section>
-
-
-<section id="consulta">
-    <div id="contenConsulta"></div>
 </section>
 
 
 
-    <script src="./2-script.js"></script>
+
+
+
 </body>
+
+
 </html>
